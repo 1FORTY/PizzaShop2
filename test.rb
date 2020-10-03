@@ -10,7 +10,13 @@ loop do
 
   x = hh[id].to_i + n
   hh[id] = x
-  
+
+  total = 0
+  hh.each do |key, value|
+    total = total + value
+  end
+
+  puts "Total: #{total}"
   puts hh.inspect
   puts "======================================"
 end
