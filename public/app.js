@@ -34,3 +34,19 @@ function cart_get_number_of_items()
 
   return cnt;
 }
+
+function cart_get_orders()
+{
+  let orders = '';
+  for (let i = 0; i < window.localStorage.length; i++){
+
+    let key = window.localStorage.key(i); // Получаем ключ
+    let value = window.localStorage.getItem(key); // Получаем значение
+
+    if (key.indexOf('product_') == 0) { // Пока перебираем массив, отбираем нужные нам ключи
+      orders += key + '=' value * 1 ', ';
+    }
+  }
+
+  return orders;
+}
