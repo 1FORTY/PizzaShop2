@@ -18,3 +18,19 @@ function add_to_cart(id)
 
   window.localStorage.setItem(key, x); // hh['product_id'] = x - то есть присваиваем значение ключу
 }
+
+function cart_get_number_of_items()
+{
+  let cnt = 0;
+  for (let i = 0; i < window.localStorage.length; i++){
+
+    let key = window.localStorage.key(i); // Получаем ключ
+    let value = window.localStorage.getItem(key); // Получаем значение
+
+    if (key.indexOf('product_') == 0) { // Пока перебираем массив, отбираем нужные нам ключи
+      cnt += value * 1;
+    }
+  }
+
+  return cnt;
+}
