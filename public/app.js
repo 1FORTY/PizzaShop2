@@ -48,7 +48,7 @@ function cart_get_orders()
 
     if (key.indexOf('product_') == 0) 
     {
-      orders += key + ' = ' + value * 1 + ',';
+      orders += key + '=' + value * 1 + ',';
     }
   }
 
